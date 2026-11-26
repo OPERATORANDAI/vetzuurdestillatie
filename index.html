@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vacuümdestillatie van vetzuren</title>
+<meta name="description" content="Twee interactieve modules over vacuüm-vetzuurdestillatie: twee kolommen in serie, met de natuurwet achter elke berekening. De uitlegmodule is één HTML-bestand dat volledig offline werkt.">
+<style>
+:root {
+  --achtergrond: #f4f6f8;
+  --vlak: #ffffff;
+  --vlak-diep: #e9edf1;
+  --rand: #d3dae1;
+  --tekst: #1b2733;
+  --tekst-zacht: #4a5a6a;
+  --accent: #1f5f8b;
+  --accent-tekst: #ffffff;
+  --waarschuwing: #fff6e0;
+  --waarschuwing-rand: #8a5a00;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --achtergrond: #11181f;
+    --vlak: #1a242e;
+    --vlak-diep: #141d25;
+    --rand: #33424f;
+    --tekst: #e8eef4;
+    --tekst-zacht: #a9bacb;
+    --accent: #6fb2dd;
+    --accent-tekst: #11181f;
+    --waarschuwing: #33290f;
+    --waarschuwing-rand: #d9ab5c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --achtergrond: #11181f;
+  --vlak: #1a242e;
+  --vlak-diep: #141d25;
+  --rand: #33424f;
+  --tekst: #e8eef4;
+  --tekst-zacht: #a9bacb;
+  --accent: #6fb2dd;
+  --accent-tekst: #11181f;
+  --waarschuwing: #33290f;
+  --waarschuwing-rand: #d9ab5c;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--achtergrond);
+  color: var(--tekst);
+  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+main {
+  max-width: 62rem;
+  margin: 0 auto;
+  /* Compact: de hele pagina past op 1366 × 768 zonder te scrollen, met de disclaimer in beeld (leesronde, ronde 2). */
+  padding: 1.1rem 16px 0.6rem;
+}
+h1 { font-size: 1.6rem; line-height: 1.2; margin: 0 0 0.3rem; }
+h2 { font-size: 1.15rem; line-height: 1.25; margin: 0 0 0.35rem; }
+.wat { font-size: 1.05rem; margin: 0 0 0.9rem; }
+.kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1rem; margin: 0 0 0.9rem; }
+.kaart {
+  display: flex;
+  flex-direction: column;
+  background: var(--vlak);
+  border: 1px solid var(--rand);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+}
+.kaart p { margin: 0 0 0.5rem; }
+.kaart__soort { color: var(--tekst-zacht); font-size: 0.9rem; font-weight: 600; }
+.kaart p.kaart__soort { margin-bottom: 0.2rem; }
+.kaart__feiten { color: var(--tekst-zacht); font-size: 0.9rem; }
+.kaart__nog { font-size: 0.9rem; border-left: 3px solid var(--waarschuwing-rand); padding-left: 0.5rem; }
+.kaart .knoppen { margin-top: auto; }
+.kaart--uit { background: var(--vlak-diep); }
+.knoppen { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; align-items: center; }
+.knop {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-tekst);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.45rem 1.2rem;
+  border-radius: 6px;
+  border: 2px solid var(--accent);
+}
+.knop:hover, .knop:focus-visible { filter: brightness(1.1); }
+.knop--uit { background: var(--vlak-diep); color: var(--tekst-zacht); border-color: var(--rand); cursor: not-allowed; }
+.knop--uit:hover { filter: none; }
+a { color: var(--accent); }
+a:focus-visible, .knop:focus-visible { outline: 3px solid var(--tekst); outline-offset: 3px; }
+.route { margin: 0 0 0.9rem; }
+.disclaimer {
+  background: var(--waarschuwing);
+  border-left: 4px solid var(--waarschuwing-rand);
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  margin: 0 0 0.8rem;
+}
+.disclaimer p { margin: 0.1rem 0; }
+footer { border-top: 1px solid var(--rand); padding-top: 0.5rem; color: var(--tekst-zacht); font-size: 0.9rem; }
+footer p { margin: 0.15rem 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Vacuümdestillatie van vetzuren</h1>
+  <p class="wat">Twee interactieve modules over twee vetzuurkolommen in serie, met bij elke berekening de natuurwet erachter.</p>
+
+  <div class="kaarten">
+    <section class="kaart" aria-labelledby="kaart-uitleg">
+      <p class="kaart__soort">Model 1 · de uitlegmodule</p>
+      <h2 id="kaart-uitleg">Waarom doet de kolom wat ze doet?</h2>
+      <p>Bij elk apparaat in het processchema en het P&amp;ID: wat het doet, welke wet erachter zit en wat er misgaat. <span data-getal="wetvensters">24</span> wetvensters, <span data-getal="leertaken">7</span> storingen als leertaak, <span data-getal="begrippen">63</span> begrippen, en de installatie in de tijd, met trends en een nabespreking.</p>
+      <p class="kaart__feiten">Versie 1.1.19 · 26 november 2026 · één bestand, werkt zonder internet</p>
+      <div class="knoppen">
+        <a class="knop" href="vetzuurkolom.html">Open</a>
+        <a href="vetzuurkolom.html" download="vetzuurkolom.html">Download voor offline gebruik</a>
+      </div>
+    </section>
+    <section class="kaart" aria-labelledby="kaart-bediening">
+      <p class="kaart__soort">Model 2 · de bedieningsmodule</p>
+      <h2 id="kaart-bediening">Hoe bedien je de installatie?</h2>
+      <p>DCS-schermen volgens ISA-101, met faceplates, regelaars, alarmen en beveiligingen: alle <span data-getal="kringen">7</span> regelkringen, en <span data-getal="scenarios">3</span> scenario's met een nabespreking. Bij een regel of een apparaat opent een klik de uitlegmodule in een tweede tabblad.</p>
+      <p class="kaart__nog">Nog niet af: scenario 4 en 5, een alarmlijst met kwiteren, een scherm voor de instructeur, en de condensors als regelkring.</p>
+      <p class="kaart__feiten">Versie 0.16 · 26 november 2026 · één bestand, werkt zonder internet</p>
+      <div class="knoppen">
+        <a class="knop" href="vetzuurkolom-bediening.html">Open</a>
+        <a href="vetzuurkolom-bediening.html" download="vetzuurkolom-bediening.html">Download voor offline gebruik</a>
+      </div>
+    </section>
+  </div>
+
+  <p class="route"><strong>De leerroute.</strong> Begin met de uitlegmodule. Wie de wetten kent, begrijpt in de bedieningsmodule waarom een regelaar of beveiliging zo is ingesteld.</p>
+
+  <section class="disclaimer" aria-label="Disclaimer">
+    <p><strong>Lesmateriaal, geen ontwerpgereedschap en geen operator training simulator.</strong></p>
+    <p>Generieke, afgeronde waarden; geen gegevens van een bestaande installatie of werkgever. Waarden zonder bron zijn gemarkeerd.</p>
+    <p>Nog niet beproefd door een operator uit de doelgroep. Geen garantie.</p>
+  </section>
+
+  <footer>
+    <p>Licentie: <a href="LICENSE">CC BY-SA 4.0</a>, voor code en tekst. © 2026 Wouter de Weerd (GitHub: OPERATORANDAI). Bronnen: <a href="BRONNEN.md">de bronnenlijst</a>. Meer uitleg: <a href="README.md">README</a>. Hoe dit gemaakt is: <a href="werkwijze.html">de werkwijze</a>.</p>
+    <p>Contact: <a href="https://github.com/OPERATORANDAI/vetzuurdestillatie/issues">GitHub Issues</a> of <a href="https://www.linkedin.com/in/wouterdeweerd">LinkedIn</a>.</p>
+  </footer>
+</main>
+</body>
+</html>

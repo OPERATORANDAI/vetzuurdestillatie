@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoe dit gemaakt is</title>
+<meta name="description" content="Hoe de twee modules over vacuüm-vetzuurdestillatie gemaakt zijn: wie ze maakte, de rolverdeling, hoe fouten gevangen worden, de vaste eisen, de didactiek en wat er nog komt.">
+<style>
+:root {
+  --achtergrond: #f4f6f8;
+  --vlak: #ffffff;
+  --vlak-diep: #e9edf1;
+  --rand: #d3dae1;
+  --tekst: #1b2733;
+  --tekst-zacht: #4a5a6a;
+  --accent: #1f5f8b;
+  --accent-tekst: #ffffff;
+  --waarschuwing: #fff6e0;
+  --waarschuwing-rand: #8a5a00;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --achtergrond: #11181f;
+    --vlak: #1a242e;
+    --vlak-diep: #141d25;
+    --rand: #33424f;
+    --tekst: #e8eef4;
+    --tekst-zacht: #a9bacb;
+    --accent: #6fb2dd;
+    --accent-tekst: #11181f;
+    --waarschuwing: #33290f;
+    --waarschuwing-rand: #d9ab5c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --achtergrond: #11181f;
+  --vlak: #1a242e;
+  --vlak-diep: #141d25;
+  --rand: #33424f;
+  --tekst: #e8eef4;
+  --tekst-zacht: #a9bacb;
+  --accent: #6fb2dd;
+  --accent-tekst: #11181f;
+  --waarschuwing: #33290f;
+  --waarschuwing-rand: #d9ab5c;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--achtergrond);
+  color: var(--tekst);
+  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+main { max-width: 48rem; margin: 0 auto; padding: 1.1rem 16px 2rem; }
+nav.terug { margin: 0 0 1rem; }
+h1 { font-size: 1.6rem; line-height: 1.2; margin: 0 0 0.4rem; }
+h2 { font-size: 1.2rem; line-height: 1.25; margin: 1.8rem 0 0.5rem; }
+p, li { max-width: 46rem; }
+p { margin: 0 0 0.75rem; }
+ul, ol { margin: 0 0 0.75rem; padding-left: 1.4rem; }
+li { margin: 0 0 0.4rem; }
+.inleiding { font-size: 1.05rem; color: var(--tekst-zacht); }
+.vak {
+  background: var(--vlak);
+  border: 1px solid var(--rand);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin: 0 0 1rem;
+}
+.vak h3 { font-size: 1rem; margin: 0 0 0.35rem; }
+.vak p:last-child { margin-bottom: 0; }
+.getal { font-weight: 600; }
+.tijdlijn { list-style: none; padding-left: 0; border-left: 3px solid var(--rand); }
+.tijdlijn li { padding-left: 0.9rem; margin-bottom: 0.55rem; }
+.tijdlijn time { display: inline-block; min-width: 9.5rem; color: var(--tekst-zacht); font-variant-numeric: tabular-nums; }
+.tijdlijn .versie { font-weight: 600; }
+.niet {
+  background: var(--waarschuwing);
+  border-left: 4px solid var(--waarschuwing-rand);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  margin: 0 0 1rem;
+}
+.niet ul { margin-bottom: 0; }
+a { color: var(--accent); }
+a:focus-visible { outline: 3px solid var(--tekst); outline-offset: 3px; }
+footer { border-top: 1px solid var(--rand); margin-top: 2rem; padding-top: 0.5rem; color: var(--tekst-zacht); font-size: 0.9rem; }
+footer p { margin: 0.15rem 0; }
+</style>
+</head>
+<body>
+<main>
+  <nav class="terug" aria-label="Terug"><a href="index.html">← Startpagina</a></nav>
+
+  <h1>Hoe dit gemaakt is</h1>
+  <p class="inleiding">Voor een werkgever, een collega of een opleider die wil weten wat er achter de twee modules over vacuüm-vetzuurdestillatie zit: wie ze maakte, hoe het werk verdeeld is, hoe fouten gevangen worden en wat het niet is.</p>
+
+  <h2 id="wie">Wie het maakte, en waarom</h2>
+  <p>De modules zijn ontworpen door <strong>Wouter de Weerd</strong>, procesoperator en trainer (VaPro B). Ze zijn bedoeld voor procesoperators op VaPro B-niveau: praktisch en begrijpelijk, maar natuurkundig correct.</p>
+  <p>Een operator die weet waaróm een kolom doet wat ze doet, herkent een storing eerder en grijpt beter in. Daarom staat bij elke berekening de natuurwet erachter, en oefen je in de bedieningsmodule met dezelfde installatie.</p>
+
+  <h2 id="rollen">De rolverdeling</h2>
+  <div class="vak">
+    <h3>De vakman en keurmeester: Wouter de Weerd</h3>
+    <p>Hij bepaalt wat de installatie is en doet, beoordeelt de fysica en de procesvoering, en keurt alles wat een cursist te zien krijgt. Hij beslist over elke keuze in het procesontwerp, elk nieuw scherm en elke versie.</p>
+  </div>
+  <div class="vak">
+    <h3>De bouwer: Claude Code</h3>
+    <p>Een AI die programmeert. Zij schrijft de code, de controles en de verslagen, volgens vaste werkafspraken, en stopt bij elke keuze die niet de hare is.</p>
+  </div>
+  <div class="vak">
+    <h3>De beoordelaar: een tweede AI</h3>
+    <p>Een tweede AI kijkt het werk kritisch na, los van de bouwer.</p>
+  </div>
+  <p><strong>Niets komt in de uitgebrachte versie zonder zijn keuring.</strong> Elk stuk werk wordt apart gebouwd en getoetst. Pas als hij de schermen, de uitkomsten en het verslag heeft gezien en akkoord is, gaat het in de hoofdversie en krijgt het een versienummer.</p>
+
+  <h2 id="fouten">Hoe fouten gevangen worden</h2>
+  <div class="vak">
+    <h3>Een testsuite van <span class="getal" data-getal="controles">10 271</span> controles</h3>
+    <p>In <span class="getal" data-getal="groepen">258</span> groepen. Ze toetsen de natuurwetten (de massabalans sluit, het kookpunt bij 1013,25 mbar klopt met de literatuur, een hogere druk geeft een hoger kookpunt), de schermen in een echte browser op 1366 × 768 en 1920 × 1080, en de tekst tegen het model: een getal in een zin wordt uit de tekst gelezen en naast de uitkomst van het model gelegd.</p>
+    <p>De suite draait in <span class="getal" data-getal="delen">6</span> delen, elk onder de tien minuten, op netstroom. De bedieningsmodule moet daarbij minstens <span class="getal" data-getal="tempo">30</span> keer sneller rekenen dan de werkelijkheid. Het aantal controles heeft een ondergrens: valt er een weg, dan zakt de suite.</p>
+  </div>
+  <div class="vak">
+    <h3>Een controle moet kunnen falen</h3>
+    <p>Een controle die niet kan falen, controleert niets. Daarom krijgt elke nieuwe controle een tegenproef: dezelfde controle op een opzettelijk foute invoer, die moet zakken. En een controle rekent nooit met de grootheid die zij controleert, maar langs een eigen weg.</p>
+  </div>
+  <div class="vak">
+    <h3><span class="getal" data-getal="mutaties">1744</span> mutaties</h3>
+    <p>Mutaties zijn opzettelijke fouten in de code: een verkeerd teken, een andere grens, een regel die wegvalt. Ze draaien elk apart, met de echte testsuite, en de suite moet elke fout vangen. Wordt er een niet gevangen, dan gaat het werk niet verder: de controle wordt verscherpt, of de maker beslist. Ze staan in <span class="getal" data-getal="mutatiesets">82</span> reeksen; <span class="getal" data-getal="vervallen">23</span> doen niet meer mee omdat de code waar ze op mikten er niet meer is, elk met de reden erbij.</p>
+    <p>Eerlijk: <span class="getal" data-getal="overlevers">7</span> mutaties uit de eerste rondes van de uitlegmodule worden nog niet gevangen; ze staan op de lijst voor een volgende versie. Van <span class="getal" data-getal="equivalent">3</span> andere is aangetoond dat de gemuteerde code precies hetzelfde doet als de echte: die kan geen controle vangen.</p>
+  </div>
+  <div class="vak">
+    <h3>De vingerafdruk van het rekenmodel</h3>
+    <p>De uitkomsten van de uitlegmodule liggen vast in <span class="getal" data-getal="vingerafdruk">12</span> vaste situaties: de zeven storingen, de trendoefeningen en een etmaal vrij bedrijf. Verandert er een getal, dan zakt de suite, tot de maker de tabel met de oude en de nieuwe uitkomsten heeft gezien en goedgekeurd.</p>
+  </div>
+  <div class="vak">
+    <h3>De schermtekst</h3>
+    <p>Elke tekst op de schermen van de bedieningsmodule ligt vast, in <span class="getal" data-getal="schermstanden">116</span> standen van het scherm. Verandert er een zin, dan ziet de maker eerst het verschil; pas na zijn akkoord wordt de referentie bijgewerkt.</p>
+  </div>
+
+  <h2 id="eisen">De vaste eisen</h2>
+  <ul>
+    <li><strong>Bij elk onderwerp de natuurwet of formule erachter</strong>, met haar naam, de formule, de eenheden, een uitleg in gewone taal en een bron. De uitlegmodule heeft <span class="getal" data-getal="wetvensters">24</span> wetvensters; de bedieningsmodule <span class="getal" data-getal="regels">54</span> regels, elk met haar soort: natuurwet, definitie, afgeleide methode, correlatie, regelalgoritme of modelaanname. Een correlatie heet nooit een wet.</li>
+    <li><strong>Elk getal een openbare bron of een afleiding</strong>, met het geldigheidsbereik: de bronnenlijst heeft <span class="getal" data-getal="paragrafen">216</span> paragrafen.</li>
+    <li><strong>Geen gegevens van een vorige werkgever.</strong> Geen setpoints, tekeningen, procedures of procesdata uit de praktijk, en geen bedrijfsnamen. Praktijkervaring geeft richting: wat realistisch is en wat een operator moet zien. De getallen komen uit de literatuur.</li>
+    <li><strong>Eerlijk wat een aanname is.</strong> Een waarde zonder bron is gemarkeerd, in de module zelf en in de bronnenlijst. Waar het model iets niet rekent, zegt het scherm dat, bij de meting die het raakt.</li>
+  </ul>
+
+  <h2 id="didactiek">De didactiek</h2>
+  <p>De opbouw volgt 4C/ID, het vier-componentenmodel van J. J. G. van Merriënboer en P. A. Kirschner (<em>Ten Steps to Complex Learning</em>, 3e druk, 2018):</p>
+  <ul>
+    <li><strong>Leertaken</strong> van eenvoudig naar complex, met afnemende hulp: <span class="getal" data-getal="leertaken">7</span> leertaken in de uitlegmodule, en <span class="getal" data-getal="scenarios">3</span> scenario's in de bedieningsmodule, elk met een nabespreking.</li>
+    <li><strong>Ondersteunende informatie</strong>, het waarom: de uitlegmodule. Bij elk apparaat wat het doet, welke wet erachter zit en wat er in bedrijf misgaat.</li>
+    <li><strong>Procedurele informatie</strong>, het hoe: de bedieningsmodule. Faceplates, regelaars en beveiligingen zoals in een controlekamer, met bij elke regel de uitleg op het moment dat je haar nodig hebt.</li>
+    <li><strong>Deeltaakoefening</strong>, waar routine nodig is: trendbeelden aflezen in de uitlegmodule.</li>
+  </ul>
+  <p>Begin met de uitlegmodule. Wie de wetten kent, begrijpt in de bedieningsmodule waarom een regelaar of beveiliging zo is ingesteld. Vanuit de bedieningsmodule opent een klik de uitleg in de uitlegmodule.</p>
+
+  <h2 id="tijdlijn">De tijdlijn</h2>
+  <ol class="tijdlijn">
+    <li><time datetime="2026-09-22">22 september 2026</time> <span class="versie" data-module="uitleg" data-versie="0.1">Uitlegmodule 0.1</span>: de eerste versie.</li>
+    <li><time datetime="2026-10-01">1 oktober 2026</time> <span class="versie" data-module="uitleg" data-versie="1.0">Uitlegmodule 1.0</span>: de stofdata uit metingen, elke waarde beoordeeld, de waarden zonder bron op het scherm, een blinde diagnose door de bouwer.</li>
+    <li><time datetime="2026-10-06">6 oktober 2026</time> <span class="versie" data-module="bediening" data-versie="0.2">Bedieningsmodule 0.2</span>: de eerste regelkring rond, van het veld tot het scherm.</li>
+    <li><time datetime="2026-10-11">11 oktober 2026</time> <span class="versie" data-module="uitleg" data-versie="1.1.0">Uitlegmodule 1.1.0</span>: een reparatie van het model, met de voedingspomp en de componentbalans van K-02.</li>
+    <li><time datetime="2026-10-23">23 oktober 2026</time> <span class="versie" data-module="bediening" data-versie="0.5">Bedieningsmodule 0.5</span>: alle zeven regelkringen bedienbaar.</li>
+    <li><time datetime="2026-10-24">24 oktober 2026</time> <span class="versie" data-module="bediening" data-versie="0.7">Bedieningsmodule 0.7</span>: de beveiliging op de topdruk en het venster Beveiliging.</li>
+    <li><time datetime="2026-11-13">13 november 2026</time> <span class="versie" data-module="uitleg" data-versie="1.1.10">Uitlegmodule 1.1.10</span>: de begrippenlijst.</li>
+    <li><time datetime="2026-11-20">20 november 2026</time> <span class="versie" data-module="bediening" data-versie="0.8">Bedieningsmodule 0.8</span>: de weg tussen de twee modules, heen en terug.</li>
+    <li><time datetime="2026-11-23">23 november 2026</time> <span class="versie" data-module="uitleg" data-versie="1.1.17">Uitlegmodule 1.1.17</span>: het P&amp;ID van de hele installatie.</li>
+    <li><time datetime="2026-11-24">24 november 2026</time> <span class="versie" data-module="bediening" data-versie="0.13">Bedieningsmodule 0.13</span>: de laag van de instructeur en het eerste scenario.</li>
+    <li><time datetime="2026-11-25">25 november 2026</time> <span class="versie" data-module="bediening" data-versie="0.15">Bedieningsmodule 0.15</span>: het derde scenario, een luchtlek dat de regelkringen wegregelen.</li>
+    <li><time datetime="2026-11-26">26 november 2026</time> <span class="versie" data-module="uitleg" data-versie="1.1.18">Uitlegmodule 1.1.18</span>: de knop terug naar het P&amp;ID.</li>
+    <li><time datetime="2026-11-26">26 november 2026</time> <span class="versie" data-module="bediening" data-versie="0.16">Bedieningsmodule 0.16</span>: de nabespreking volgt de stand van de regelaars.</li>
+    <li><time datetime="2026-11-26">26 november 2026</time> <span class="versie" data-module="uitleg" data-versie="1.1.19">Uitlegmodule 1.1.19</span>: de bronnen nagelopen op leveranciers, en de publicatie, met deze pagina.</li>
+  </ol>
+  <p>In totaal <span class="getal" data-getal="versies">41</span> versies van de twee modules, tussen 22 september en 26 november 2026.</p>
+  <h3>Wat er nog komt</h3>
+  <ul>
+    <li>In de bedieningsmodule: scenario 4 en 5, een alarmlijst met kwiteren en prioriteit, een scherm voor de instructeur om zelf storingen in te brengen, en de condensors als regelkring.</li>
+    <li>Een proef met een operator uit de doelgroep die de modules nooit zag. Pas daarna komt versie 1.0 van de bedieningsmodule.</li>
+  </ul>
+
+  <h2 id="niet">Wat het niet is</h2>
+  <div class="niet">
+    <ul>
+      <li><strong>Geen echte installatie.</strong> De installatie is generiek: apparaatnummers als K-01 en E-01, afgeronde waarden uit de literatuur.</li>
+      <li><strong>Een rekenmodel met aannames.</strong> Het model rekent sommige dingen bewust niet, bijvoorbeeld de warmte die nog in een bodem zit, of het volume van het vacuümsysteem. Waar dat telt, zegt het scherm het.</li>
+      <li><strong>Geen ontwerpgereedschap en geen operator training simulator.</strong> Reken er geen kolom mee uit, en toets er geen bediening mee van een bestaande installatie.</li>
+      <li><strong>Nog niet beproefd door een operator uit de doelgroep.</strong></li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>Licentie: <a href="LICENSE">CC BY-SA 4.0</a>, voor code en tekst. © 2026 Wouter de Weerd (GitHub: OPERATORANDAI). Bronnen: <a href="BRONNEN.md">de bronnenlijst</a>. Meer uitleg: <a href="README.md">README</a>. Terug naar de <a href="index.html">startpagina</a>.</p>
+  </footer>
+</main>
+</body>
+</html>
