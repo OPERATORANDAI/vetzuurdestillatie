@@ -121,7 +121,7 @@ footer p { margin: 0.15rem 0; }
 
   <h2 id="fouten">Hoe fouten gevangen worden</h2>
   <div class="vak">
-    <h3>Een testsuite van <span class="getal" data-getal="controles">10 271</span> controles</h3>
+    <h3>Een testsuite van <span class="getal" data-getal="controles">10 285</span> controles</h3>
     <p>In <span class="getal" data-getal="groepen">258</span> groepen. Ze toetsen de natuurwetten (de massabalans sluit, het kookpunt bij 1013,25 mbar klopt met de literatuur, een hogere druk geeft een hoger kookpunt), de schermen in een echte browser op 1366 × 768 en 1920 × 1080, en de tekst tegen het model: een getal in een zin wordt uit de tekst gelezen en naast de uitkomst van het model gelegd.</p>
     <p>De suite draait in <span class="getal" data-getal="delen">6</span> delen, elk onder de tien minuten, op netstroom. De bedieningsmodule moet daarbij minstens <span class="getal" data-getal="tempo">30</span> keer sneller rekenen dan de werkelijkheid. Het aantal controles heeft een ondergrens: valt er een weg, dan zakt de suite.</p>
   </div>
@@ -130,8 +130,8 @@ footer p { margin: 0.15rem 0; }
     <p>Een controle die niet kan falen, controleert niets. Daarom krijgt elke nieuwe controle een tegenproef: dezelfde controle op een opzettelijk foute invoer, die moet zakken. En een controle rekent nooit met de grootheid die zij controleert, maar langs een eigen weg.</p>
   </div>
   <div class="vak">
-    <h3><span class="getal" data-getal="mutaties">1744</span> mutaties</h3>
-    <p>Mutaties zijn opzettelijke fouten in de code: een verkeerd teken, een andere grens, een regel die wegvalt. Ze draaien elk apart, met de echte testsuite, en de suite moet elke fout vangen. Wordt er een niet gevangen, dan gaat het werk niet verder: de controle wordt verscherpt, of de maker beslist. Ze staan in <span class="getal" data-getal="mutatiesets">82</span> reeksen; <span class="getal" data-getal="vervallen">23</span> doen niet meer mee omdat de code waar ze op mikten er niet meer is, elk met de reden erbij.</p>
+    <h3><span class="getal" data-getal="mutaties">1760</span> mutaties</h3>
+    <p>Mutaties zijn opzettelijke fouten in de code: een verkeerd teken, een andere grens, een regel die wegvalt. Ze draaien elk apart, met de echte testsuite, en de suite moet elke fout vangen. Wordt er een niet gevangen, dan gaat het werk niet verder: de controle wordt verscherpt, of de maker beslist. Ze staan in <span class="getal" data-getal="mutatiesets">83</span> reeksen; <span class="getal" data-getal="vervallen">23</span> doen niet meer mee omdat de code waar ze op mikten er niet meer is, elk met de reden erbij.</p>
     <p>Eerlijk: <span class="getal" data-getal="overlevers">7</span> mutaties uit de eerste rondes van de uitlegmodule worden nog niet gevangen; ze staan op de lijst voor een volgende versie. Van <span class="getal" data-getal="equivalent">3</span> andere is aangetoond dat de gemuteerde code precies hetzelfde doet als de echte: die kan geen controle vangen.</p>
   </div>
   <div class="vak">
@@ -177,8 +177,9 @@ footer p { margin: 0.15rem 0; }
     <li><time datetime="2026-11-26">26 november 2026</time> <span class="versie" data-module="uitleg" data-versie="1.1.18">Uitlegmodule 1.1.18</span>: de knop terug naar het P&amp;ID.</li>
     <li><time datetime="2026-11-26">26 november 2026</time> <span class="versie" data-module="bediening" data-versie="0.16">Bedieningsmodule 0.16</span>: de nabespreking volgt de stand van de regelaars.</li>
     <li><time datetime="2026-11-26">26 november 2026</time> <span class="versie" data-module="uitleg" data-versie="1.1.19">Uitlegmodule 1.1.19</span>: de bronnen nagelopen op leveranciers, en de publicatie, met deze pagina.</li>
+    <li><time datetime="2026-11-27">27 november 2026</time> <span class="versie" data-module="uitleg" data-versie="1.1.20">Uitlegmodule 1.1.20</span>: de licentie in haar officiële tekst, met de lijst van de bestanden in de README.</li>
   </ol>
-  <p>In totaal <span class="getal" data-getal="versies">41</span> versies van de twee modules, tussen 22 september en 26 november 2026.</p>
+  <p>In totaal <span class="getal" data-getal="versies">42</span> versies van de twee modules, tussen 22 september en 27 november 2026.</p>
   <h3>Wat er nog komt</h3>
   <ul>
     <li>In de bedieningsmodule: scenario 4 en 5, een alarmlijst met kwiteren en prioriteit, een scherm voor de instructeur om zelf storingen in te brengen, en de condensors als regelkring.</li>
@@ -196,7 +197,7 @@ footer p { margin: 0.15rem 0; }
   </div>
 
   <footer>
-    <p>Licentie: <a href="LICENSE">CC BY-SA 4.0</a>, voor code en tekst. © 2026 Wouter de Weerd (GitHub: OPERATORANDAI). Bronnen: <a href="BRONNEN.md">de bronnenlijst</a>. Meer uitleg: <a href="README.md">README</a>. Terug naar de <a href="index.html">startpagina</a>.</p>
+    <p>© 2026 Wouter de Weerd. Alle bestanden van deze uitgave vallen onder <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.nl">CC BY-SA 4.0</a>, voor code en tekst. Bronnen: <a href="BRONNEN.md">de bronnenlijst</a>. Meer uitleg: <a href="README.md">README</a>. Terug naar de <a href="index.html">startpagina</a>.</p>
   </footer>
 </main>
 </body>

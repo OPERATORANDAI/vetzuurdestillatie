@@ -12,7 +12,7 @@ bedieningsmodule opent een klik bij een regel of een apparaat de uitlegmodule in
 je terug, terwijl de bedieningsmodule doorloopt. Dat werkt als de twee bestanden in dezelfde map staan. In Firefox brengt de
 terugbalk je niet zelf terug: ga dan naar het andere tabblad.
 
-**Versie 1.1.19, 26 november 2026.**
+**Versie 1.1.20, 27 november 2026.**
 
 - **Openen:** [`index.html`](index.html), de startpagina, of meteen [`vetzuurkolom.html`](vetzuurkolom.html) downloaden en
   dubbelklikken. Geen installatie, geen internet, geen server; alles zit in het ene bestand. Staan de twee in dezelfde map,
@@ -118,6 +118,16 @@ op GitHub, of via [LinkedIn][linkedin].
 
 ## Licentie
 
-[CC BY-SA 4.0](LICENSE) (Creative Commons Naamsvermelding-GelijkDelen 4.0 Internationaal), voor de code en de tekst samen. Je
-mag het delen en bewerken, ook commercieel, mits je de maker noemt en je bewerking onder dezelfde licentie deelt.
-© 2026 Wouter de Weerd (GitHub: OPERATORANDAI).
+Copyright (c) 2026 Wouter de Weerd. Alle bestanden van deze uitgave vallen onder CC BY-SA 4.0:
+
+- [`index.html`](index.html), de startpagina;
+- [`werkwijze.html`](werkwijze.html), hoe het gemaakt is;
+- [`vetzuurkolom.html`](vetzuurkolom.html), de uitlegmodule;
+- [`vetzuurkolom-bediening.html`](vetzuurkolom-bediening.html), de bedieningsmodule;
+- [`README.md`](README.md), deze tekst;
+- [`BRONNEN.md`](BRONNEN.md), de bronnenlijst.
+
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.nl) (Creative Commons Naamsvermelding-GelijkDelen 4.0
+Internationaal), voor de code en de tekst samen. Je mag het delen en bewerken, ook commercieel, mits je de maker noemt (Wouter de
+Weerd, GitHub: OPERATORANDAI) en je bewerking onder dezelfde licentie deelt. De officiële tekst van de licentie staat ongewijzigd in
+het bestand `LICENSE`.
